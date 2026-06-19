@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Book Store</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        h1 {
+            color: darkblue;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .book {
+            background: white;
+            width: 250px;
+            margin: 15px;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+        }
+
+        button {
+            background: green;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: darkgreen;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>📚 Online Book Store</h1>
+
+    <div class="container">
+
+        <div class="book">
+            <h2>Python Programming</h2>
+            <p>Price: ₹499</p>
+            <button onclick="buyBook('Python Programming')">Buy Now</button>
+        </div>
+
+        <div class="book">
+            <h2>Web Development</h2>
+            <p>Price: ₹599</p>
+            <button onclick="buyBook('Web Development')">Buy Now</button>
+        </div>
+
+        <div class="book">
+            <h2>Data Science</h2>
+            <p>Price: ₹699</p>
+            <button onclick="buyBook('Data Science')">Buy Now</button>
+        </div>
+
+        <div class="book">
+            <h2>Machine Learning</h2>
+            <p>Price: ₹799</p>
+            <button onclick="buyBook('Machine Learning')">Buy Now</button>
+        </div>
+
+    </div>
+
+    <script>
+        function buyBook(bookName) {
+            alert("You selected: " + bookName);
+        }
+    </script>
+
+</body>
+</html>
