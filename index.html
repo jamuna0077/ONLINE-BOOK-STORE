@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Online Book Store</title>
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -43,6 +44,7 @@
         }
     </style>
 </head>
+
 <body>
 
     <h1>📚 Online Book Store</h1>
@@ -52,32 +54,33 @@
         <div class="book">
             <h2>Python Programming</h2>
             <p>Price: ₹499</p>
-            <button onclick="buyBook('Python Programming')">Buy Now</button>
+            <button onclick="buyBook('Python Programming', 499)">Buy Now</button>
         </div>
 
         <div class="book">
             <h2>Web Development</h2>
             <p>Price: ₹599</p>
-            <button onclick="buyBook('Web Development')">Buy Now</button>
+            <button onclick="buyBook('Web Development', 599)">Buy Now</button>
         </div>
 
         <div class="book">
             <h2>Data Science</h2>
             <p>Price: ₹699</p>
-            <button onclick="buyBook('Data Science')">Buy Now</button>
+            <button onclick="buyBook('Data Science', 699)">Buy Now</button>
         </div>
 
         <div class="book">
             <h2>Machine Learning</h2>
             <p>Price: ₹799</p>
-            <button onclick="buyBook('Machine Learning')">Buy Now</button>
+            <button onclick="buyBook('Machine Learning', 799)">Buy Now</button>
         </div>
 
     </div>
 
     <script>
-        function buyBook(bookName) {
-            alert("You selected: " + bookName);
+        function buyBook(name, price) {
+            // redirect to order page with data
+            window.location.href = `order.html?book=${encodeURIComponent(name)}&price=${price}`;
         }
     </script>
 
