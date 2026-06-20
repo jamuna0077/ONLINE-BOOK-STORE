@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Order Page</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            background-color: #f4f4f4;
+            padding-top: 50px;
+        }
+
+        .box {
+            background: white;
+            width: 300px;
+            margin: auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+        }
+
+        h2 {
+            color: darkblue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+        <h2>🛒 Order Summary</h2>
+
+        <p id="bookName"></p>
+        <p id="bookPrice"></p>
+
+        <button onclick="alert('Order Placed Successfully!')">
+            Confirm Order
+        </button>
+    </div>
+
+    <script>
+        // get data from URL
+        const params = new URLSearchParams(window.location.search);
+
+        const book = params.get("book");
+        const price = params.get("price");
+
+        document.getElementById("bookName").innerHTML = "Book: " + book;
+        document.getElementById("bookPrice").innerHTML = "Price: ₹" + price;
+    </script>
+
+</body>
+
+</html>
