@@ -1,55 +1,79 @@
-<div id="bookStore">
-    <div class="container">
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Online Book Store</title>
 
-        <div class="book">
-            <h3>Python Programming</h3>
-            <p>Price: ₹500</p>
-            <button onclick="buyBook('Python Programming',500)">
-                Buy Now
-            </button>
-        </div>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
 
-        <div class="book">
-            <h3>Java Programming</h3>
-            <p>Price: ₹600</p>
-            <button onclick="buyBook('Java Programming',600)">
-                Buy Now
-            </button>
-        </div>
+        h1 {
+            background-color: darkblue;
+            color: white;
+            padding: 15px;
+        }
 
-        <div class="book">
-            <h3>Web Development</h3>
-            <p>Price: ₹700</p>
-            <button onclick="buyBook('Web Development',700)">
-                Buy Now
-            </button>
-        </div>
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
 
+        .book {
+            background: white;
+            padding: 15px;
+            width: 220px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+        }
+
+        button {
+            background: green;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Online Book Store</h1>
+
+<div class="container">
+
+    <div class="book">
+        <h3>Python Programming</h3>
+        <p>Price: ₹500</p>
+        <button onclick="buyBook('Python Programming',500)">Buy Now</button>
     </div>
-</div>
 
-<div id="orderPage">
-    <h2>🛒 Order Details</h2>
+    <div class="book">
+        <h3>Java Programming</h3>
+        <p>Price: ₹600</p>
+        <button onclick="buyBook('Java Programming',600)">Buy Now</button>
+    </div>
 
-    <p><strong>Book:</strong> <span id="bookName"></span></p>
-    <p><strong>Price:</strong> ₹<span id="bookPrice"></span></p>
+    <div class="book">
+        <h3>Web Development</h3>
+        <p>Price: ₹700</p>
+        <button onclick="buyBook('Web Development',700)">Buy Now</button>
+    </div>
 
-    <input type="text" placeholder="Enter Your Name"><br>
-    <input type="text" placeholder="Enter Address"><br>
-
-    <button onclick="placeOrder()">Place Order</button>
 </div>
 
 <script>
-function buyBook(name, price) {
-    document.getElementById("bookStore").style.display = "none";
-    document.getElementById("orderPage").style.display = "block";
-
-    document.getElementById("bookName").innerText = name;
-    document.getElementById("bookPrice").innerText = price;
-}
-
-function placeOrder() {
-    alert("Order Placed Successfully!");
+function buyBook(book, price) {
+    localStorage.setItem("book", book);
+    localStorage.setItem("price", price);
+    window.location.href = "order.html";
 }
 </script>
+
+</body>
+</html>
